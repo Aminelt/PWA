@@ -1,2 +1,2 @@
 # PWA
-This an academic project.
+This is an academic project.
