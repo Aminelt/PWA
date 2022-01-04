@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Phase;
 
-class Phase extends Model
+class Task extends Model
 {
     use HasFactory;
 
-    public function tasks(){
-        return $this->hasMany(Task::class);
+    public function phase(){
+        return $this->belongsTo(Phase::class);
     }
 }
