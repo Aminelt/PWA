@@ -60,7 +60,11 @@ class User extends Authenticatable
     ];
 
     public function administrateur(){
-        return $this->hasOne(Administrateur::class);
+        return $this->BelongTo(Administrateur::class);
+    }
+
+    public function chercheur(){
+        return $this->BelongTo(chercheurs::class);
     }
 
 }
