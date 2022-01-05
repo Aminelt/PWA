@@ -12,7 +12,7 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
          return ProjectsResource::collection(Project::all());
     }
@@ -28,7 +28,6 @@ class ProjectsController extends Controller
 
     public function store(Request $request)
     {
-       
 
         $project = Project::create([
                       

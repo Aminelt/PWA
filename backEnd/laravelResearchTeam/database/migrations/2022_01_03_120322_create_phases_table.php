@@ -19,8 +19,7 @@ class CreatePhasesTable extends Migration
             $table->string('phase_duration');
             $table->date('start_date');
             $table->date('end_date');
-
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 

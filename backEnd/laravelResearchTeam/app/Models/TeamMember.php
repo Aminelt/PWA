@@ -14,4 +14,11 @@ class TeamMember extends Model
     {
         return $this->belongsTo(Team::class);
     }
+    
+    public function chercheur()
+    {
+        return $this->morphOne('App\Models\Chercheur', 'chercheurable');
+    }
+
+    
 }

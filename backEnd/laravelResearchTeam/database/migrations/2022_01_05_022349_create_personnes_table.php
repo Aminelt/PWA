@@ -20,7 +20,10 @@ class CreatePersonnesTable extends Migration
             $table->String('mail');
             $table->String('adresse');
             $table->String('phone');
-            $table->String('age');
+            $table->String('image');
+            $table->integer('personneable_id');
+            $table->string('personneable_type');
+            //$table->String('age');
             $table->timestamps();
         });
     }

@@ -16,6 +16,8 @@ class CreateChercheursTable extends Migration
         Schema::create('chercheurs', function (Blueprint $table) {
             $table->id();
             $table->String('rolec');
+            $table->integer('chercheurable_id');
+            $table->string('chercheurable_type');
             $table->foreignid('id_user')->references('id')->on('users');
             $table->timestamps();
         });

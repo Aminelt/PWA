@@ -14,12 +14,10 @@ class CreateVisiteursTable extends Migration
     public function up()
     {
         Schema::create('visiteurs', function (Blueprint $table) {
-            $table->increments('id');
+             $table->increments('id');
              $table->double('ip');
              $table->string('status');
-
-
-            $table->timestamps();
+             $table->timestamps();
         });
     }
 

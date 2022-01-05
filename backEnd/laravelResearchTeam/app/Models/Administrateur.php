@@ -9,6 +9,10 @@ class Administrateur extends Model
 {
     use HasFactory;
 
+
+    protected $fillable =['id_user'];
+
+
   public function compte(){
      return $this->HasOne(User::class);
 
@@ -16,4 +20,10 @@ class Administrateur extends Model
   public function administrateurherite(){
     return $this->morphOne(User::class, 'id');
   }
+
+
+  public function personne()
+    {
+        return $this->morphOne('App\Models\Personne', 'personneable');
+    }
 }

@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
+use App\Http\Resources\TeamsResource;
+
+use App\Models\Team;
+
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -14,7 +18,7 @@ class ProjectsResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
+        return [ 
 
         'id' => $this->id,
         'name' => $this->name,
@@ -24,8 +28,8 @@ class ProjectsResource extends JsonResource
         'status' => $this->status,
         'startDate' => $this->startDate,
         'endDate' => $this->endDate,
-        'team_id' => $this->team_id,
-           
+        'team' => new TeamsResource(Team::find($this->team_id)),
+        
         ];
     }
 }

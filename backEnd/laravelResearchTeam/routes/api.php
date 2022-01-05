@@ -7,8 +7,8 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\TeamLeadersController;
 use App\Http\Controllers\TeamMembersController;
-
-
+use App\Models\Administrateur;
+use App\Models\Personne;
 
 
 /*
@@ -31,3 +31,31 @@ Route::apiResource('/projects', ProjectsController::class);
 Route::apiResource('/teams', TeamsController::class);
 Route::apiResource('/teamLeaders', TeamLeadersController::class);
 Route::apiResource('/teamMembers', TeamMembersController::class);
+
+Route::get('/test', function (){
+    
+    // $admin = Administrateur::create(['id_user'=>1
+
+    // ]);
+
+    // $admin->personne()->create([
+        
+    //     'firstname'=>"moha",'lastname'=>"ali",'mail'=>"mail@gmail.com",'adresse'=>"rabat",'phone'=>"093893973",'image'=>"image.png"
+
+    // ]);
+
+
+
+    return Administrateur::find(2);
+
+
+    
+
+
+
+
+}
+
+
+
+);
