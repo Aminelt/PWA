@@ -14,6 +14,6 @@ class Administrateur extends Model
 
   }
   public function administrateurherite(){
-    return $this->morphOne('app\User', 'id');
+    return $this->morphOne(User::class, 'id');
   }
 }

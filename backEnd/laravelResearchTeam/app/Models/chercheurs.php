@@ -13,7 +13,7 @@ class chercheurs extends Model
    
      }
 
-     public function chercheurrherite(){
-        return $this->morphOne('Appchercheur', 'chercheurable');
-      }
+     public function administrateurherite(){
+      return $this->morphOne(User::class, 'id');
+    }
 }
