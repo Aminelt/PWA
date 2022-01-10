@@ -7,6 +7,11 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\TeamLeadersController;
 use App\Http\Controllers\TeamMembersController;
+use App\Http\Controllers\RegisterController;
+
+
+
+
 use App\Models\Administrateur;
 use App\Models\Personne;
 
@@ -22,15 +27,21 @@ use App\Models\Personne;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+
+Route::middleware('auth:sanctum')->group( function () {
+Route::resource('/projects', ProjectsController::class);
+Route::resource('/teams', TeamsController::class);
+Route::resource('/teamLeaders', TeamLeadersController::class);
+Route::resource('/teamMembers', TeamMembersController::class);
 });
 
-Route::apiResource('/tasks', TasksController::class);
-Route::apiResource('/projects', ProjectsController::class);
-Route::apiResource('/teams', TeamsController::class);
-Route::apiResource('/teamLeaders', TeamLeadersController::class);
-Route::apiResource('/teamMembers', TeamMembersController::class);
+
+Route::post('register', [RegisterController::class, 'register']);
+Route::post('login', [RegisterController::class, 'login']);
+     
+
 
 Route::get('/test', function (){
     

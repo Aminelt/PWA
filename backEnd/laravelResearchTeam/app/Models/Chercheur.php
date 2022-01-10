@@ -12,7 +12,6 @@ class Chercheur extends Model
         return $this->HasOne(User::class);
    
      }
-
     //  public function administrateurherite(){
     //   return $this->morphOne(User::class, 'id');
     // }

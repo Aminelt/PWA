@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\TeamsResource;
+use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 class TeamsController extends Controller
 {
@@ -25,13 +26,9 @@ class TeamsController extends Controller
      */
 
 
-
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
-       
-
         $team = Team::create([
-                      
             'name' =>  $request->input('name'),
             'teamLeader_id' =>  $request->input('teamLeader_id'),
         ]);
@@ -68,12 +65,11 @@ class TeamsController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(TeamRequest $request, Team $team)
     {
         $team->update([
             'name' =>  $request->input('name'),
-            'teamLeader_id' =>  $request->input('teamLeader_id'),
-                     
+            'teamLeader_id' =>  $request->input('teamLeader_id'),         
         ]);
 
         return new TeamsResource($team);

@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\ProjectsResource;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+
+
+
+
+
 class ProjectsController extends Controller
 {
     /**
@@ -26,7 +32,7 @@ class ProjectsController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
 
         $project = Project::create([
@@ -73,7 +79,7 @@ class ProjectsController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(ProjectRequest $request, Project $project)
     {
         $project->update([
             'name' =>  $request->input('name'),

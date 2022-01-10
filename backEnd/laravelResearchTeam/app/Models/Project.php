@@ -33,7 +33,7 @@ class Project extends Model
     }
 
 
-
+    
     /**
      * Get the comments for the blog post.
      */
